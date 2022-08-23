@@ -2,18 +2,19 @@ export namespace BANKAPI {
   export const BASE_URL = 'https://api-sandbox.starlingbank.com/';
 
   export enum USER {
-    name = '/api/v2/account-holder/name',
-    accountHolderInfo = '/api/v2/account-holder',
+    identity = '/api/v2/identity/individual',
   }
 
   export enum ACCOUNTS {
     accounts = '/api/v2/accounts',
+    balance = '/api/v2/accounts/$accountUid/balance',
   }
   export enum SAVINGS {
     goals = '/api/v2/account/$accountUid/savings-goals',
+    transferToGoal = '/api/v2/account/$accountUid/savings-goals/$savingsGoalUid/add-money/$transferUid',
   }
   export enum FEED {
-    items = '/api/v2/feed/account/$accountUid/category/$categoryUid',
+    items = '/api/v2/feed/account/$accountUid/category/$categoryUid/transactions-between',
   }
 }
 
@@ -30,6 +31,7 @@ export namespace NEXTAPI {
 
   export enum SAVINGS {
     goals = '/savings',
+    transferToGoal = '/savings/transfer',
   }
 
   export enum FEED {

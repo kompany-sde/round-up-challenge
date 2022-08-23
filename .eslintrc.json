@@ -46,7 +46,8 @@
       "error",
       {
         "patterns": [
-          "@/features/*/*"
+          "@/features/*/*",
+          "@/services/*/*"
         ]
       }
     ]

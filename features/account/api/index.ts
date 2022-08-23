@@ -1,19 +1,15 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { NEXTAPI } from 'config';
+import { baseApi } from 'redux/baseApi';
 import { IAccount } from '../types';
 
-// Define a service using a base URL and expected endpoints
-export const accountsApi = createApi({
-  reducerPath: 'accountsApi',
-  baseQuery: fetchBaseQuery({ baseUrl: NEXTAPI.BASE_URL }),
+export const accountsApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({
     getAccounts: builder.query<IAccount[], void>({
       query: () => NEXTAPI.ACCOUNTS.accounts,
       transformResponse: (response: { accounts: IAccount[] }, meta, arg) => response.accounts,
+      providesTags: ['GetAccounts'],
     }),
   }),
 });
 
-// Export hooks for usage in functional components, which are
-// auto-generated based on the defined endpoints
 export const { useGetAccountsQuery } = accountsApi;

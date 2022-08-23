@@ -7,13 +7,7 @@ export interface IResponseError {
   success: boolean;
 }
 
-export interface IAmount {
+export type Amount = {
   currency: string;
   minorUnits: number;
-}
-
-export enum CURRENCY {
-  DEFAULT = 'GBP',
-  GBP = 'GBP',
-  EUR = 'EUR',
-}
+};

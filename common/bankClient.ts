@@ -1,6 +1,8 @@
 import axios from 'axios';
 import { BANKAPI } from 'config';
 
+// An axios instance used by the server to connect to the starling api
+// all requests to the starling api utilise this instance
 const bankClient = axios.create({
   baseURL: BANKAPI.BASE_URL,
   headers: {

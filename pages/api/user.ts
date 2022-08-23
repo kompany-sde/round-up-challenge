@@ -1,26 +1,27 @@
 import bankClient from '@common/bankClient';
+import { IUser } from '@features/auth';
 import { BANKAPI } from 'config';
 import { NextApiRequest, NextApiResponse } from 'next';
 import nc, { RequestHandler } from 'next-connect';
-import axios from 'axios';
 
 const handler = nc<NextApiRequest, NextApiResponse>();
 
-const getUsser: RequestHandler<NextApiRequest, NextApiResponse> = async (req, res, next) => {
+const getUser: RequestHandler<NextApiRequest, NextApiResponse> = async (req, res, next) => {
   try {
-    const requests = [bankClient.get(BANKAPI.USER.name), bankClient.get(BANKAPI.USER.accountHolderInfo)];
+    const { data } = await bankClient.get<IUser>(BANKAPI.USER.identity);
 
-    const [name, accountHolderInfo] = await axios.all(requests);
+    return res.status(200).json({ user: data });
+  } catch (error: any) {
+    const err = error?.response?.data;
 
-    return res.status(200).json({
-      name: name.data,
-      accountHolderInfo: accountHolderInfo.data,
-    });
-  } catch (error) {
+    if (err && err.error === 'invalid_token') {
+      return res.status(403).json({ error: err });
+    }
+
     return res.status(500).json({ error });
   }
 };
 
-handler.get(getUsser);
+handler.get(getUser);
 
 export default handler;

@@ -1,6 +1,9 @@
 export interface IUser {
-  name: IAccountHolderName;
-  accountHolderInfo: IAccountHolderInfo;
+  title: string;
+  firstName: string;
+  lastName: string;
+  dateOfBirth: string;
+  email: string;
 }
 
 export interface IAccountHolderInfo {

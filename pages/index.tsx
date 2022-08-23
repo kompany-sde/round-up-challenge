@@ -1,19 +1,19 @@
 import { NextPage } from 'next';
-import { Accounts, IAccount } from '@features/account';
+import { Accounts } from '@features/account';
+import { DashboardLayout, Profile } from '@features/auth';
+import { TransactionFeed } from '@features/feed';
+import { Savings } from '@features/savings';
 
 const Home: NextPage = () => {
   return (
-    <div>
-      <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+    <DashboardLayout>
+      <Profile />
+      <div className="mt-8 space-y-6">
         <Accounts />
-        <Accounts />
-        <Accounts />
-        <Accounts />
-        <Accounts />
-        <Accounts />
-        <Accounts />
+        <Savings />
+        <TransactionFeed />
       </div>
-    </div>
+    </DashboardLayout>
   );
 };
 

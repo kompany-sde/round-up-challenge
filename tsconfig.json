@@ -9,8 +9,9 @@
       "@hooks/*": ["hooks/*"],
       "@models/*": ["models/*"],
       "@common/*": ["common/*"],
-      "@features/*": ["features/*"]
-
+      "@features/*": ["features/*"],
+      "@assets/*": ["assets/*"],
+      "@icons/*": ["icons/*"],
     },
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,

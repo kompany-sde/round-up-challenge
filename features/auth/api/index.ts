@@ -1,10 +1,8 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { NEXTAPI } from 'config';
+import { baseApi } from 'redux/baseApi';
 import { IUser } from '../types';
 
-export const userApi = createApi({
-  reducerPath: 'userApi',
-  baseQuery: fetchBaseQuery({ baseUrl: NEXTAPI.BASE_URL }),
+export const authApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({
     getCurrentUser: builder.query<IUser, void>({
       query: () => NEXTAPI.USER.user,
@@ -13,4 +11,4 @@ export const userApi = createApi({
   }),
 });
 
-export const { useGetCurrentUserQuery } = userApi;
+export const { useGetCurrentUserQuery } = authApi;
