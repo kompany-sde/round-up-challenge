@@ -1,3 +1,5 @@
+![image](https://user-images.githubusercontent.com/77177020/189109764-e3fe0a3e-53f8-40de-afea-e8ad4e16da9d.png)
+
 ## Project to Round-Up transactions for a given week and adding that combined amount into a Savings Goal using the freely avaliable Starling Bank API
 
 This is a  “round-up”   feature   for   Starling   customers   using   their   public
