@@ -28,6 +28,6 @@ Run yarn dev
 That’s it! You can now play around with the application and build on top of it.
 
 
-### This is just a demo to showcase some of the best practices using nextjs/react and writing clean code that can be easily tested and can scale very well.
+### This is just a demo to showcase some of the best practices using nextjs/react/typescript/redux/rtkquery and writing clean code that can be easily tested and can scale very well.
 
 Other best practices such as API validation, testing etc will be added soon.
