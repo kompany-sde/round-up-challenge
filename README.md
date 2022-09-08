@@ -1,4 +1,4 @@
-##Project to Round-Up transactions for a given week and adding that combined amount into a Savings Goal using the freely avaliable Starling Bank API
+## Project to Round-Up transactions for a given week and adding that combined amount into a Savings Goal using the freely avaliable Starling Bank API
 
 This is a  “round-up”   feature   for   Starling   customers   using   their   public
 developer   API   that   is   available   to   all   customers   and   partners.
